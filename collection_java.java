@@ -64,19 +64,31 @@ while(ptr1.hasNext()){//check if iterator has the elements
     drug pat1 = ptr1.next();
     System.out.println("New drug added : " + pat1.name);//printing the element and move to next  
 }
+Company[] companys=new Company[3]; 
+companys[0] = new Company("apollo","jayanagar");
+companys[1] = new Company("medex","khushinagar");
+companys[2] = new Company("Ymedicine","jagdishpur");
+
+System.out.println("\t\t---------HASH SET----------");
+
+        HashSet<Company> list_company=new HashSet<Company>();//Creating arraylist  
+        Collections.addAll(list_company, companys);//Adding object in arraylist
+        System.out.println("Hash set is empty? " + list_company.isEmpty());
+
+        //Traversing list through Iterator  
+        Iterator<company>  I =list_company.iterator();//getting the Iterator  
+        while(I.hasNext()){//check if iterator has the elements  
+        company c = I.next();
+        System.out.println("New company: " + c.name);//printing the element and move to next  
+        }
+        
+        System.out.println("HashCode: " + list_company.hashCode());   
 
 
 
-        //static variables
-        System.out.println("\nStatic variables");
-        System.out.println("Drug type 1: " + drug.drug_type1);
-        System.out.println("Drug type 2: " + drug.drug_type2);
-        System.out.println("Drug type 3: " + drug.drug_type3);
 
-        //nested static class
-        System.out.println("\nNested Static class");
-        drug.DrugCountry drug5 = new drug.DrugCountry();
-        drug5.IndiaDrug();
+
+       
     }
 }
 
@@ -487,4 +499,3 @@ class report implements A.user{
     interface user{
         public void most_sold();
     }}
-
